@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+/vcs.xml
+/Selenide_Java_TestNG_Allure.iml
+/modules.xml
+/misc.xml
+/jarRepositories.xml
+/encodings.xml
+/compiler.xml
+/allure-result/
+/build/
+.DS_Store
