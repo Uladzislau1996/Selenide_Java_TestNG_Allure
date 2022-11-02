@@ -15,11 +15,10 @@ public class PopupPageTest  {
         Configuration.browser = "chrome";
         Configuration.driverManagerEnabled = true;
         Configuration.browserSize = "2460x1440";
-        Configuration.headless = true;
+        Configuration.headless = false;
         Configuration.pageLoadTimeout = 300000;
         Selenide.open("https://www.oppabet.com");
-        PopupPageSteps popupPageSteps = new PopupPageSteps();
-        popupPageSteps.stepOpenPopup();
+
     }
 
     @AfterMethod (description = "Отчищаю кэш и куки, закрываю браузер")
@@ -33,6 +32,7 @@ public class PopupPageTest  {
             description = "Проверяю что Поп-ап содержит все элементы, в табах Matches/Leagues")
     public void allWebElementsInMatchesTest(String request){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest(request);
         popupSteps.stepCheckAllWebElementsInTabs();
         popupSteps.stepClickToElement(popupSteps.popUpTabLeagues);
@@ -44,6 +44,7 @@ public class PopupPageTest  {
                     "которые равны значению каунтера в Табe Matches")
     public void searchButtonInMatchesTest(String request){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest(request);
         popupSteps.stepCheckCounterAndElementsCollection();
     }
@@ -54,6 +55,7 @@ public class PopupPageTest  {
                     "которые равны значению каунтера в Табе Leagues")
     public void searchButtonInLeaguesTest(String request){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepClickToElement(popupSteps.popUpTabLeagues);
         popupSteps.stepEnterRequest(request);
         popupSteps.stepCheckCounterAndElementsCollection();
@@ -64,6 +66,7 @@ public class PopupPageTest  {
             description = "Проверяю, что каунтер в PopUp в табе MATCHES = кол-ву результатов")
     public void popUpCounterTest(String request){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest(request);
         popupSteps.stepCheckCounterAndElementsCollection();
         popupSteps.stepClickToElement(popupSteps.popUpTabLeagues);
@@ -76,6 +79,7 @@ public class PopupPageTest  {
             "нет мконок коэфицентов")
     public void popUpNotHasCoefficientsInLeaguesTabTest(String request){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest(request);
         popupSteps.stepClickToElement(popupSteps.popUpTabLeagues);
         sleep(3000);
@@ -83,16 +87,18 @@ public class PopupPageTest  {
     }
 
     @Test (description = "Проверяю, что отображается заглушка если нет запроса в поиске в табах LEAGUES/MATCHES")
-    public void testStubTestWithEmptyRequest(){
+    public void stubTestWithEmptyRequestTest(){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepCheckNotSearchResultText();
         popupSteps.stepClickToElement(popupSteps.popUpTabLeagues);
         popupSteps.stepCheckNotSearchResultText();
     }
 
     @Test (description = "Проверяю, что отображается заглушка если введен не корректный запрос в табах LEAGUES/MATCHES")
-    public void testStubTestWithInvalidRequest(){
+    public void stubTestWithInvalidRequestTest(){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest("test123QA");
         popupSteps.stepCheckNotSearchResultText();
         popupSteps.stepClickToElement(popupSteps.popUpTabLeagues);
@@ -101,16 +107,18 @@ public class PopupPageTest  {
 
 
     @Test (description = "Проверяю, что каунтер = 0 если нет запроса в поиске в табах LEAGUES/MATCHES")
-    public void testCounterWithIEmptyRequest(){
+    public void counterWithIEmptyRequestTest(){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepCheckNotSearchResultText();
         popupSteps.stepClickToElement(popupSteps.popUpTabLeagues);
         popupSteps.stepCheckNotSearchResultText();
     }
 
     @Test (description = "Проверяю, что каунтер = 0 если введен не корретный запрос поиске в табах LEAGUES/MATCHES")
-    public void testCounterWithIncorrectRequest(){
+    public void counterWithIncorrectRequestTest(){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest("test123QA");
         popupSteps.stepCheckNotSearchResultText();
         popupSteps.stepClickToElement(popupSteps.popUpTabLeagues);
@@ -119,8 +127,9 @@ public class PopupPageTest  {
 
     @Test (description = "Проверяю, что только при включенном чекбоксе 'Live' всегда отображается ячейка Live" +
             " напротив результатов в табе MATCHES")
-    public void testLiveIconsAreDisplayed(){
+    public void liveIconsAreDisplayedTest(){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest("football");
         popupSteps.stepClickToElement(popupSteps.popUpCheckBoxNameSport);
         sleep(3000);
@@ -130,8 +139,9 @@ public class PopupPageTest  {
 
     @Test (description = "Проверяю, что только при включенном чекбоксе 'Live' всегда отображается ячейка Live" +
             " напротив результатов в табе LEAGUES")
-    public void testLiveIconsAreDisplayedLeagues(){
+    public void liveIconsAreDisplayedLeaguesTest(){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest("football");
         popupSteps.stepClickToElement(popupSteps.popUpCheckBoxSport);
         popupSteps.stepClickToElement(popupSteps.popUpTabLeagues);
@@ -142,8 +152,9 @@ public class PopupPageTest  {
     @Test (dataProvider = "searchRequest",
             description = "Проверяю, что подтягиваются результаты поиска если включенны все чекбоксы" +
             "Live/Sports/Exact")
-    public void testResultsWithAllCheckBoxes(String request){
+    public void resultsWithAllCheckBoxesTest(String request){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest(request);
         popupSteps.stepClickToElement(popupSteps.popUpCheckBoxExactMatch);
         sleep(3000);
@@ -155,8 +166,9 @@ public class PopupPageTest  {
 
     @Test (dataProvider = "searchRequest",
             description = "Проверяю, что подтягиваются результаты поиска если включенны чекбоксы Sports/Exact match")
-    public void testResultsWithSportsAndExactMatchCheckBoxes(String request){
+    public void resultsWithSportsAndExactMatchCheckBoxesTest(String request){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest(request);
         popupSteps.stepClickToElement(popupSteps.popUpCheckBoxExactMatch);
         popupSteps.stepClickToElement(popupSteps.popUpCheckBoxLive);
@@ -169,8 +181,9 @@ public class PopupPageTest  {
 
     @Test (dataProvider = "searchRequest",
             description = "Проверяю, что не подтягиваются результаты, если выключены чекбоксы")
-    public void testResultsWithoutCheckBoxes(String request){
+    public void resultsWithoutCheckBoxesTest(String request){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest(request);
         popupSteps.stepClickToElement(popupSteps.popUpCheckBoxLive);
         popupSteps.stepClickToElement(popupSteps.popUpCheckBoxSport);
@@ -182,8 +195,9 @@ public class PopupPageTest  {
     }
 
     @Test (description = "Проверяю, работу кнопки удалить текст в поле поиска")
-    public void testDeleteRequestButton(){
+    public void deleteRequestButtonTest(){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest("football");
         popupSteps.stepClickToElement(popupSteps.popUpClear);
         popupSteps.stepClickToElement(popupSteps.popUpSearchButton);
@@ -197,8 +211,9 @@ public class PopupPageTest  {
     @Test (dataProvider = "searchRequest",
             description = "Проверить, что текст результата поиска кликабелен и ведет на соответсвующую страницу" +
             " в табе Matches")
-    public void testUrlInSearchResults(String request){
+    public void urlInSearchResultsTest(String request){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepEnterRequest(request);
         popupSteps.stepCheckUrlInSearchResults();
     }
@@ -206,21 +221,20 @@ public class PopupPageTest  {
     @Test (dataProvider = "searchRequest",
             description = "Проверить, что текст результата поиска кликабелен и ведет на соответсвующую страницу" +
                     " в табе LEAGUES")
-    public void testSearchResultsLeagues(String request){
+    public void searchResultsLeaguesTest(String request){
         PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
         popupSteps.stepClickToElement(popupSteps.popUpTabLeagues);
         popupSteps.stepEnterRequest(request);
         popupSteps.stepCheckUrlInSearchResults();
     }
 
-    @Test (dataProvider = "searchRequest",
-            description = "Проверить, что коэфиценты кликабельны")
-    public void testCoefficientOfSearchResultsIsClickable(String request){
-        PopupPageSteps popupSteps = new PopupPageSteps();
-        popupSteps.stepEnterRequest(request);
-        popupSteps.checkSearchResultsCoefficients();
+    @Test (description = "Проверить, что коэфиценты кликабельны")
+    public void AllWebElementsInRegistrationBlockAreDisplayedTest(){
+        RegistrationSteps registration = new RegistrationSteps();
+        sleep(3000);
+        registration.CheckAllWebElements();
     }
-
 
     @DataProvider
     public Object [][] searchRequest(){
@@ -232,6 +246,14 @@ public class PopupPageTest  {
                // {"hockey"},
                // {"golf"}
         };
+    }
+
+    @Test (description = "Проверить, что коэфиценты кликабельны")
+    public void testCoefficientOfSearchResultsIsClickable(String request){
+        PopupPageSteps popupSteps = new PopupPageSteps();
+        popupSteps.stepOpenPopup();
+        popupSteps.stepEnterRequest(request);
+        popupSteps.checkSearchResultsCoefficients();
     }
 
 }
