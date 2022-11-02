@@ -21,3 +21,6 @@
 17. To check that the search result text is clickable and leads to the appropriate page in the Matches tab
 18. To check that the text of the search result is clickable and leads to the corresponding page in the LEAGUES tab
 19. To check that coefficients are clickable
+
+
+# And at the moment I update my test project and i'm adding new test checks for registration block
