@@ -1,6 +1,7 @@
 # Selenide_Java_TestNG_Allure
 # A test project in which I automated test cases that check the operation of the pop-up search on the bookmaker's website https://www.oppabet888.com/ru
 
+# At the beginning of each test case, I enter the query that is indicated @DataProvider, use data "Arsenal and footbal". 
 # The test cases I covered the search popup with:
 1. To check that the Pop-up contains all the elements in the Matches/Leagues tabs
 2. To check that after clicking on the search button, results are pulled up that are equal to the value of the counter in Tab Matches
