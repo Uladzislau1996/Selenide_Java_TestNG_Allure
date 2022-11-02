@@ -11,3 +11,5 @@
 /allure-result/
 /build/
 .DS_Store
+/target/
+MyTestProject.iml
