@@ -10,6 +10,7 @@
 /compiler.xml
 /allure-result/
 /build/
+/libraries/
 .DS_Store
 /target/
 MyTestProject.iml

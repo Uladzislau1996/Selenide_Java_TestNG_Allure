@@ -1,8 +1,8 @@
 # Selenide_Java_TestNG_Allure
-# A test project in which I automated test cases that check the operation of the pop-up search on the bookmaker's website https://www.oppabet888.com/ru
-
-# At the beginning of each test case, I enter the query that is indicated @DataProvider, use data "Arsenal and footbal". 
-# The test cases I covered the search popup with:
+## A test project in which I automated test cases that check the operation of the pop-up search on the bookmaker's website https://www.oppabet888.com/ru
+## And at the moment I update my test project and i'm adding new test checks for registration block
+### At the beginning of each test case, I enter the query that is indicated @DataProvider, use data "Arsenal and footbal". 
+#### The test cases I covered the search popup with:
 1. To check that the Pop-up contains all the elements in the Matches/Leagues tabs
 2. To check that after clicking on the search button, results are pulled up that are equal to the value of the counter in Tab Matches
 3. To check that after clicking on the search button, results are pulled up that are equal to the value of the counter in Taba Leagues
@@ -23,4 +23,6 @@
 19. To check that coefficients are clickable
 
 
-# And at the moment I update my test project and i'm adding new test checks for registration block
+### The test cases I covered the registration block:
+ 1. To check that all registration elements are displayed
+ 2. To check that country filed has 5th country

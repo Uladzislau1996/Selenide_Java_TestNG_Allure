@@ -1,9 +1,8 @@
 package test.selenide.project;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationLocators {
     public SelenideElement registrationBlock = $("#MainPageRight");
@@ -20,7 +19,12 @@ public class RegistrationLocators {
     public SelenideElement registrationEmail = $(".c-registration__field--email");
     public SelenideElement registrationSurname = $(".c-registration__field--surname");
     public SelenideElement registrationPromoCode = $("#registration_ref_code");
-    public SelenideElement registrationCaptcha= $(".c-registration__field--captcha");
-    public SelenideElement registrationRules= $(".c-registration__rules");
-    public SelenideElement registrationBonus= $("#registration_1st_bonus_link");
+    public SelenideElement registrationCaptcha = $(".c-registration__field--captcha");
+    public SelenideElement registrationRules = $(".c-registration__rules");
+    public SelenideElement registrationBonus = $("#registration_1st_bonus_link");
+
+    public ElementsCollection registrationAvailableCountry = $$(".c-registration__block--country>" +
+            ".c-registration__select>.multiselect__content-wrapper>ul>.multiselect__element");
+
+
 }

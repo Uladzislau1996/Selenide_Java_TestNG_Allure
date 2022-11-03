@@ -1,11 +1,12 @@
 package test.selenide.project;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.testng.Assert;
 
 public class RegistrationSteps extends RegistrationLocators {
 
-    public void CheckAllWebElements(){
+    public void checkAllWebElements(){
         Assert.assertTrue(registrationBlock.isDisplayed(), "Не отображается блок регистрации");
         Assert.assertTrue(registrationTitle.isDisplayed(), "Не отображается тайтл регистрации");
         Assert.assertTrue(registrationButton.isDisplayed(), "Не отображается кнопка зарегистрироваться");
@@ -23,6 +24,14 @@ public class RegistrationSteps extends RegistrationLocators {
         Assert.assertTrue(registrationCaptcha.isDisplayed(), "Не отображается блок Captcha");
         Assert.assertTrue(registrationRules.isDisplayed(), "Не отображается блок Rules");
         Assert.assertTrue(registrationBonus.isDisplayed(), "Не отображается кнопка Bonus");
+    }
+
+    public void clickOnTheElement(SelenideElement element){
+        element.click();
+    }
+
+    public void checkSizeInElementsCollection(ElementsCollection collection, Integer size){
+        Assert.assertEquals(collection.size(), size, "Not display all elements in the list");
     }
 
 }
