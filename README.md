@@ -25,4 +25,6 @@
 
 ### The test cases I covered the registration block:
  1. To check that all registration elements are displayed
- 2. To check that country filed has 5th country
+ 2. To check that country dropdown has 5 countries
+ 3. To cehck that currency dropdown has 4 currency
+ 4. Test 4-6 check that city dropdown has all cities for the selected country
