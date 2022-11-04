@@ -22,9 +22,15 @@ public class RegistrationLocators {
     public SelenideElement registrationCaptcha = $(".c-registration__field--captcha");
     public SelenideElement registrationRules = $(".c-registration__rules");
     public SelenideElement registrationBonus = $("#registration_1st_bonus_link");
+    public ElementsCollection registrationCountriesList = $$(".c-registration__block--country>div>div>ul>.multiselect__element");
+    public ElementsCollection registrationCurrencyList = $$(".c-registration__block--currency>div>div>ul>.multiselect__element");
+    public ElementsCollection registrationCityList = $$(".c-registration__block--city>div>div>ul>.multiselect__element");
+    public SelenideElement registrationCountryBangladesh = $(".c-registration__block--country>div>div>ul>.multiselect__element:nth-child(1)");
+    public SelenideElement registrationCountryMalaysia = $(".c-registration__block--country>div>div>ul>.multiselect__element:nth-child(2)");
+    public SelenideElement registrationCountryVietnam = $(".c-registration__block--country>div>div>ul>.multiselect__element:nth-child(3)");
+    public SelenideElement registrationCountryIndonesia = $(".c-registration__block--country>div>div>ul>.multiselect__element:nth-child(4)");
+    public SelenideElement registrationCountryNepal = $(".c-registration__block--country>div>div>ul>.multiselect__element:nth-child(5)");
 
-    public ElementsCollection registrationAvailableCountry = $$(".c-registration__block--country>" +
-            ".c-registration__select>.multiselect__content-wrapper>ul>.multiselect__element");
 
 
 }

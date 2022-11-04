@@ -7,7 +7,7 @@
 2. To check that after clicking on the search button, results are pulled up that are equal to the value of the counter in Tab Matches
 3. To check that after clicking on the search button, results are pulled up that are equal to the value of the counter in Taba Leagues
 4. To check that the counter in PopUp in the MATCHES tab = number of results
-5. To  check that there are no mconok coefficients in the League tab
+5. To  check that there are no icon's coefficients in the League tab
 6. To check that a stub is displayed if there is no query in the search in the LEAGUES / MATCHES tabs
 7. To check that a stub is displayed if an invalid query is entered in the LEAGUES / MATCHES tabs
 8. To check that the counter = 0 if there is no query in the search in the LEAGUES/MATCHES tabs
@@ -17,7 +17,7 @@
 13. To check that the search results are pulled up if all the Live/Sports/Exact checkboxes are enabled
 14. Checking that the search results are pulled up if the Sports/Exact match checkboxes are enabled
 15. To check that the results are not pulled up if the checkboxes are turned off
-16. To check if the delete text button in the search box works
+16. To check if delete text button in the search box works
 17. To check that the search result text is clickable and leads to the appropriate page in the Matches tab
 18. To check that the text of the search result is clickable and leads to the corresponding page in the LEAGUES tab
 19. To check that coefficients are clickable
