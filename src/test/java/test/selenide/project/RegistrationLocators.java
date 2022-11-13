@@ -12,12 +12,12 @@ public class RegistrationLocators {
     public SelenideElement registrationBySocialNetworksButton = $(".c-registration__tabs>div:nth-child(2)");
     public SelenideElement registrationCountry = $(".c-registration__block--country>div:nth-child(1)");
     public SelenideElement registrationCurrency = $(".c-registration__block--currency");
-    public SelenideElement registrationPassword = $(".c-registration__field--password");
+    public SelenideElement registrationPassword = $("#registration_password");
     public SelenideElement registrationCity = $(".c-registration__field--city");
-    public SelenideElement registrationReenterPassword = $(".c-registration__field--password_repeat");
-    public SelenideElement registrationFirstName = $(".c-registration__field--name");
-    public SelenideElement registrationEmail = $(".c-registration__field--email");
-    public SelenideElement registrationSurname = $(".c-registration__field--surname");
+    public SelenideElement registrationReenterPassword = $("#registration_password_again");
+    public SelenideElement registrationFirstName = $("#registration_name");
+    public SelenideElement registrationEmail = $("#registration_email");
+    public SelenideElement registrationSurname = $("#registration_surname");
     public SelenideElement registrationPromoCode = $("#registration_ref_code");
     public SelenideElement registrationCaptcha = $(".c-registration__field--captcha");
     public SelenideElement registrationRules = $(".c-registration__rules");

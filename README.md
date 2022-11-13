@@ -26,5 +26,12 @@
 ### The test cases I covered the registration block:
  1. To check that all registration elements are displayed
  2. To check that country dropdown has 5 countries
- 3. To cehck that currency dropdown has 4 currency
- 4. Test 4-6 check that city dropdown has all cities for the selected country
+ 3. To check that currency dropdown has 4 currency
+ 4. Check that the dropdown city has 799 cities in India
+ 5. Check that the dropdown city has 15 cities in Bangladesh
+ 6. Check that the dropdown city has 61 cities in Malaysia
+ 7. Check that the dropdown city has 59 cities in Vietnam
+ 8. Check that the dropdown city has 145 cities in Indonesia
+ 9. Check that the dropdown city has 7 cities in Nepal
+ 10. Check default text in the all buttons/fields
+ 11. Check placeholder in the text fields

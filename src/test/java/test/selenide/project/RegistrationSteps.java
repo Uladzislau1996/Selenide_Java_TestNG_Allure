@@ -34,4 +34,12 @@ public class RegistrationSteps extends RegistrationLocators {
         Assert.assertEquals(collection.size(), size, "Not display all elements in the list");
     }
 
+    public void checkDefaultTextInTheButtonsAndDropDowns(SelenideElement element, String placeholder){
+        Assert.assertEquals(element.getText(), placeholder, "Incorrect default text");
+    }
+
+    public void checkPlaceholderInTheFields(SelenideElement element, String placeholder){
+        Assert.assertEquals(element.getAttribute("placeholder"), placeholder, "placeholder isn't correct");
+    }
+
 }

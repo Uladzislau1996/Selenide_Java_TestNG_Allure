@@ -46,10 +46,10 @@ public class RegistrationTest extends RegistrationSteps {
         registration.checkSizeInElementsCollection(registrationCurrencyList, 4);
     }
 
-    @Test(description = "Dropdown city has 799 cities in India")
+    @Test(description = "Dropdown city has 800 cities in India")
     public void fieldCityHasAllCountriesInIndiaTest(){
         RegistrationSteps registration = new RegistrationSteps();
-        registration.checkSizeInElementsCollection(registrationCityList, 799);
+        registration.checkSizeInElementsCollection(registrationCityList, 800);
     }
 
     @Test(description = "Dropdown city has 15 cities in Bangladesh")
@@ -97,7 +97,26 @@ public class RegistrationTest extends RegistrationSteps {
         registration.checkSizeInElementsCollection(registrationCityList, 7);
     }
 
+    @Test(description = "Check default text in the all buttons/fields")
+    public void correctDefaultTextInTheAllButtonsAndFields(){
+        RegistrationSteps registration = new RegistrationSteps();
+        registration.checkDefaultTextInTheButtonsAndDropDowns(registrationByEmailButton, "By e-mail");
+        registration.checkDefaultTextInTheButtonsAndDropDowns(registrationBySocialNetworksButton, "Social networks and messengers");
+        registration.checkDefaultTextInTheButtonsAndDropDowns(registrationCountry, "India");
+        registration.checkDefaultTextInTheButtonsAndDropDowns(registrationCurrency, "INR (Indian rupee)");
+        registration.checkDefaultTextInTheButtonsAndDropDowns(registrationCity, "Select city");
+        registration.checkDefaultTextInTheButtonsAndDropDowns(registrationButton, "REGISTER");
+    }
 
-
+    @Test(description = "Check placeholder in the text fields")
+    public void correctPlaceholderInThe(){
+        RegistrationSteps registration = new RegistrationSteps();
+        registration.checkPlaceholderInTheFields(registrationPassword, "Password");
+        registration.checkPlaceholderInTheFields(registrationReenterPassword, "Re-enter your password");
+        registration.checkPlaceholderInTheFields(registrationFirstName, "First name");
+        registration.checkPlaceholderInTheFields(registrationEmail, "Email");
+        registration.checkPlaceholderInTheFields(registrationSurname, "Surname");
+        registration.checkPlaceholderInTheFields(registrationPromoCode, "Enter promo code (if you have one)");
+    }
 
 }
